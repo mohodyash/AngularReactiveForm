@@ -1,0 +1,191 @@
+<div class="container-fluid">
+    <h1>Templet Driven form in angular</h1>
+    <form #userForm="ngForm">
+      {{userForm.value | json}}
+      <hr />
+      {{userModel | json}}
+
+       <!-- only on templet   -->
+      <!-- <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="username"id="name" aria-describedby="emailHelp" ngModel>
+      </div> -->
+ 
+       <!-- one way binding from componet to view  -->
+      <!-- <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="username"id="name" [ngModel]="userModel.username">
+      </div> -->
+
+       <!-- two way binding using banna syntax [(ngModel)]  -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="username"id="name" [(ngModel)]="userModel.username">
+      </div>
+      
+
+
+      <!-- <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" ngModel>
+      </div> -->
+     
+      <!-- <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" [ngModel]="userModel.email">
+      </div>  -->
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" [(ngModel)]="userModel.email">
+      </div> 
+
+
+
+
+      <!-- <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" ngModel>
+      </div> -->
+
+      <!-- <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" [ngModel]="userModel.Password">
+      </div> -->
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" [(ngModel)]="userModel.Password">
+      </div>
+
+
+      
+      <!-- <div class="form-group">
+        <label for="topics">Example select</label>
+        <select class="form-control" id="topics" name="topic" ngModel>
+          <option *ngFor="let topic of topics">{{topic}}</option>
+          
+        </select>
+      </div> -->
+ 
+      <!-- <div class="form-group">
+        <label for="topics">Example select</label>
+        <select class="form-control" id="topics" name="topic" [ngModel]="userModel.topic">
+          <option *ngFor="let topic of topics">{{topic}}</option>
+          
+        </select>
+      </div>  -->
+     
+      <div class="form-group">
+        <label for="topics">Example select</label>
+        <select class="form-control" id="topics" name="topic" [(ngModel)]="userModel.topic">
+          <option *ngFor="let topic of topics">{{topic}}</option>
+          
+        </select>
+      </div> 
+
+
+
+
+       <!-- <div class="mb-3 mt-4">
+         <label>Time Prefarences</label> 
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="time" id="time" value="morning" checked ngModel>
+          <label class="form-check-label" for="time">
+            Morning (9AM - 12PM)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="time" id="time1" value="evening" ngModel>
+          <label class="form-check-label" for="time1">
+            Evening (5PM - 8PM)
+          </label>
+        </div> 
+      </div>   -->
+
+      <!-- <div class="mb-3 mt-4">
+        <label>Time Prefarences</label> 
+       <div class="form-check">
+         <input class="form-check-input" type="radio" name="time" id="time" value="morning" checked [ngModel]="userModel.time">
+         <label class="form-check-label" for="time">
+           Morning (9AM - 12PM)
+         </label>
+       </div>
+       <div class="form-check">
+         <input class="form-check-input" type="radio" name="time" id="time1" value="evening" [ngModel]="userModel.time">
+         <label class="form-check-label" for="time1">
+           Evening (5PM - 8PM)
+         </label>
+       </div> 
+     </div>   -->
+
+
+     <div class="mb-3 mt-4">
+        <label>Time Prefarences</label> 
+       <div class="form-check">
+         <input class="form-check-input" type="radio" name="time" id="time" value="morning" checked [(ngModel)]="userModel.time">
+         <label class="form-check-label" for="time">
+           Morning (9AM - 12PM)
+         </label>
+       </div>
+       <div class="form-check">
+         <input class="form-check-input" type="radio" name="time" id="time1" value="evening" [(ngModel)]="userModel.time">
+         <label class="form-check-label" for="time1">
+           Evening (5PM - 8PM)
+         </label>
+       </div> 
+     </div>  
+    
+
+
+
+      <!-- <div class="form-check">
+        <input class="form-check-input" name="sendmePromotionl" type="checkbox" value="true" id="sendme" ngModel>
+        <label class="form-check-label" for="sendme">
+         Send Me Promotionl offers    
+        </label>
+      </div>  -->
+
+      <!-- <div class="form-check">
+        <input class="form-check-input" name="sendmePromotionl" type="checkbox" value="true" id="sendme" [ngModel]="userModel.sendmePromotionl">
+        <label class="form-check-label" for="sendme">
+         Send Me Promotionl offers    
+        </label>
+      </div>  -->
+
+      <div class="form-check">
+        <input class="form-check-input" name="sendmePromotionl" type="checkbox" value="true" id="sendme" [(ngModel)]="userModel.sendmePromotionl">
+        <label class="form-check-label" for="sendme">
+         Send Me Promotionl offers    
+        </label>
+      </div> 
+  
+     <!-- ngGroup with in we can add multiple control with in one group -->
+      <!-- <h1> ngModelGroup Example </h1>
+      <div ngModelGroup="address">
+        <div class="form-group">
+          <label fo="city" >City</label>
+          <input type="text" name="city" id="city" ngModel>
+        </div>
+        <div class="form-group">
+          <label fo="state" >State</label>
+          <input type="text" name="state" id="state" ngModel>
+        </div>
+        <div class="form-group">
+          <label fo="street" >Street</label>
+          <input type="text" name="street" id="street" ngModel>
+        </div>
+        <div class="form-group">
+          <label fo="postel" >Postal Code</label>
+          <input type="number" name="postel" id="postel" ngModel>
+        </div>
+      </div> -->
+  
+     
+       
+  
+       
+    <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+    </form>
+  
+  </div>

@@ -1,0 +1,43 @@
+<form [formGroup] = "customerRegistration" (ngSubmit)="onSubmit()">
+    <label>
+        Cutomer Name:
+        <input type="text" formControlName = "customerName">
+    </label><br><br>
+    <label>
+        Customer Email
+        <input type="email" formControlName = "customerEmail">
+    </label><br><br>
+    <label>
+        Customer Phone
+        <input type="number" formControlName = "customerPhone">
+    </label><br><br>
+
+     <div formGroupName="customerAddress">
+        <h3>Address</h3>
+        <label>
+            City
+            <input type="text" formControlName = "city">
+        </label><br><br>
+        <label>
+            Street
+            <input type="text" formControlName = "street">
+        </label><br><br>
+        <label>
+            State
+            <input type="text" formControlName = "state">
+        </label><br><br>
+        <label>
+            Postal Code
+            <input type="number" formControlName = "postalCode">
+        </label><br><br>
+
+          
+     </div>   
+ 
+
+    <button type="submit" [disabled]= "!customerRegistration.valid">Submit</button> 
+
+     
+      
+</form>
+

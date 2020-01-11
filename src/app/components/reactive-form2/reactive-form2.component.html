@@ -1,0 +1,22 @@
+<form [formGroup] = "userRegistration" (ngSubmit)="onSubmit()">
+    <label>
+        First Name:
+        <input type="text" formControlName = "firstName">
+    </label><br><br>
+    <label>
+        Last Name:
+        <input type="text" formControlName = "lastName">
+    </label><br><br>
+    <label>
+        Age
+        <input type="number" formControlName = "age">
+    </label><br><br>
+    <label>
+        Email
+        <input type="email" formControlName = "email">
+    </label><br><br>
+
+    <button type="submit" [disabled]= "!userRegistration.valid">Submit</button> 
+
+      {{data | json}}
+</form>
